@@ -12,9 +12,9 @@ def Rand(start, end, num):
     return res
 
 
-num = 20
+num = 100
 start = 20
-end = 40
+end = 500
 a = Rand(start, end, num)
 
 
