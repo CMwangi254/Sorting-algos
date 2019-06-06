@@ -1,9 +1,26 @@
-a = [3, 2, 7, 5, 6]  # create a list
+import time
+import random
+# a = [3, 2, 7, 5, 6]  # create a list
+
+
+def Rand(start, end, num):
+    res = []
+
+    for j in range(num):
+        res.append(random.randint(start, end))
+
+    return res
+
+
+num = 20
+start = 20
+end = 40
+a = Rand(start, end, num)
 
 
 def insertion_sort(a):  # define a function for sorting the list
-    for i in range(1, len(a)):  # loop through the number of items in the list
-        for j in range(i-1, -1, -1):  # looping through the index value of the items in the list starting from the end
+    for i in range(1, len(a)):  # loop through the list starting from the second item
+        for j in range(i-1, -1, -1):  # looping through the list tarting from the item adjacent to the subject item
             if a[j] > a[j+1]:  # if number in subject is greater than the number on the left
                 a[j], a[j+1] = a[j+1], a[j]  # swap them
             else:
@@ -11,4 +28,9 @@ def insertion_sort(a):  # define a function for sorting the list
     return a  # return the newly sorted list
 
 
+start_time = time.time()
 print(insertion_sort(a))  # print the list
+timetaken = time.time()-start_time
+print(timetaken)
+
+
