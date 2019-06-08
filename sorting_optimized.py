@@ -1,6 +1,6 @@
 import time
 import random
-# a = [3, 2, 7, 5, 6]  # create a list
+# a = [3, 2, 7, 5, 6, 12, 8, 10]  # create a list
 
 
 def Rand(start, end, num):
@@ -24,7 +24,7 @@ def insertion_sort(a):  # define a function for sorting the list
         curNum = a[i]
         for j in range(i - 1, -1, -1):  # looping through the list tarting from the item adjacent to the subject item
             if a[j] > curNum:
-                a[j+1] = a[j]
+                a[j], a[j+1] = a[j+1], a[j]
             else:
                 a[j+1] = curNum
                 break
